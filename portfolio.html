@@ -4,8 +4,8 @@
         <title> My First Website</title>
         <style>
             body {
-                background: rgb(125, 198, 205);
-                color: rgb(45, 45, 45);
+                background: rgb(168, 104, 9);
+                color: rgb(122, 7, 7);
                 padding: 10px;
                 font-family: arial;
             }
@@ -16,7 +16,7 @@
          
             /* navigation menu */
             nav {
-                background: rgb(239, 80, 41);
+                background: rgb(13, 1, 126);
                margin: 0 auto;
                 display: flex;
                 padding: 10px;
@@ -24,7 +24,7 @@
             h1 {
                 display: flex;
                 align-items: center;
-                color: white;
+                color: rgb(7, 38, 75);
                 flex: 1;
                 margin: 0;
             }
@@ -37,12 +37,12 @@
             }
             a {
                 text-decoration: none;
-                color: #fff;
+                color: rgb(192, 11, 11);
             }
          
             /* main container area beneath menu */
             main {
-                background: rgb(245, 238, 219);
+                background: rgb(255, 187, 0);
                 display: flex;
             }
             .sidebar {
@@ -57,13 +57,13 @@
                 padding: 15px;
             }
             #interests {
-                border: 4px silver ridge;
+                border: 4px rgb(0, 0, 0) ridge;
                 padding: 8px;
             }
             h2, h3 {
                 margin: 0px;
             }
-            /* portfolio styles */
+             /* portfolio styles */
          .content h1 {
              color: black;
          }
@@ -92,28 +92,23 @@
     </head>
 
         <body>
-        
-        <div id = "allcontents">
+        <div id = "all-contents">
             <nav>
                 <h1>Kyle's Website</h1>
-                <ul>
-                     <li><a href = "index.html">Home</a></li>
-                    <li><a href = "index.html">Portfolio</a></li>
-                </ul>
+                <ul id= "nav-ul">
+                    <li class= "nav-li"><a href = "index.html">Home</a></li>
+                    <li class= "nav-li">  <a href = "portfolio.html">Portfolio</a></li>
+                 </ul>     
             </nav>
           <main>
-            <nav>
-                <!-- Nav stuff here...-->
-            </nav>
-            <main>
-                <div class="content">
-                    <h1>Portfolio</h1>
-                    <ul id="portfolio">
-                        <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
-    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
-    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
-                    </ul>
-                </div>
+            <div class="content">
+                <h1>Portfolio</h1>
+                <ul id="portfolio">
+                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                </ul>
+            </div>
             </main>
         </div>
     </body>
