@@ -11,5 +11,6 @@
         game.load.atlas('halle', './asset/halle/phaser-json-array/halle.png', './asset/halle/phaser-json-array/halle.json');
         game.load.image('pyramid', './asset/collectable/pyramid.png');
         game.load.image('jobama', './asset/collectable/jobama.png');
+        game.load.image('homicide', './asset/collectable/homicide.png');
     };
 })(window);

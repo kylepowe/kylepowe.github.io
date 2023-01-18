@@ -5,8 +5,9 @@
   let collectable = window.opspark.collectable;
 
   let type = {
-    pyramid: { assetKey: "pyramid", points : 500},
+    pyramid: { assetKey: "pyramid", points : 600},
     jobama: { assetKey: "jobama", points : 300},
+    homicide: {assetKey: "homicide", points : 150},
   };
 
   window.opspark.collectable.type = type;
@@ -36,9 +37,9 @@
     // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
 
     // example:
-    createCollectable(type.pyramid, 800, 100);
-    createCollectable(type.jobama, 50, 20);
-
+    createCollectable(type.pyramid, 475, 300);
+    createCollectable(type.jobama, 675, 150);
+    createCollectable(type.homicide, 850, 550);
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
   }
