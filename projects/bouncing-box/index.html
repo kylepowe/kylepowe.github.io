@@ -14,8 +14,8 @@
 			user-select: none;
 			display: block;
 			position: absolute;
-			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			top: 400px;
+			left: 900px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
@@ -63,7 +63,9 @@
 			
 			// TODO 2 - Variable declarations 
 			
-
+			var positionX = 900;
+			var points = 0;
+			var speed = 10;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -71,7 +73,10 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				moveBoxTo(positionX += speed);
+				if (conditionIsTrue){
+					
+				}
 
 			};
 
@@ -82,7 +87,9 @@
 			*/
 			function handleBoxClick() {
 				
-
+				positionX = 900;
+				changeBoxText(points ++);
+				speed = speed + 3
 
 			};
 		})();
