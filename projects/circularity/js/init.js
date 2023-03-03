@@ -28,12 +28,12 @@ var init = function (window) {
         function drawCircle(){            
                 circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
                 physikz.addRandomVelocity(circle, canvas, 10, 10);
-                view.addChild(circle);
+                view.addChild(circle);                              // drawing the circles
                 circles.push(circle);           
         }
         // TODO 3 / 7 : Call the drawCircle() function 
         for(var i = 0; i < 100; i++){
-            drawCircle();
+drawCircle();                       //looping the circles 
         }
 
         ////////////////////////////////////////////////////////////
@@ -69,17 +69,17 @@ var init = function (window) {
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width + circle.radius ) {
                 circle.x = 0 - circle.radius;
-            }
+            }       //LOOPING AROUND THE RIGHT SIDE
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             if(circle.x < 0 - circle.radius){
-                circle.x = canvas.width + circle.radius;
+                circle.x = canvas.width + circle.radius;        //LOOPING AROUND THE TOP
             }
             if(circle.y > canvas.height + circle.radius){
-                circle.y = circle.y - circle.radius;
+                circle.y = circle.y - circle.radius;        //LOOPING AROUND THE LEFT
             }
             if(circle.y < 0 - circle.radius){
-                circle.y = canvas.height + circle.radius;
+                circle.y = canvas.height + circle.radius;     //LOOPING AROUND THE BOTTOM
             }
 
 
