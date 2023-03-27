@@ -66,10 +66,10 @@ var background = function (window) {
               }
             
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap("img/tree.png"); // uses bitmap to draw image and stores it in var tree
+            /* tree = draw.bitmap("img/tree.png"); // uses bitmap to draw image and stores it in var tree
             tree.x = canvasWidth - 1000; // assigns a value to tree.x and sets it at 1000 pixels before you reach canasWidth
             tree.y = groundY - 250; // assigns a value to tree.y and sets it at 250 pixels before you reach groundY
-            background.addChild(tree); // adds tree as a child to background to make it visible
+            background.addChild(tree); // adds tree as a child to background to make it visible */
             
         } // end of render function - DO NOT DELETE
         
@@ -83,11 +83,11 @@ var background = function (window) {
             var groundY = ground.y;
             
             // TODO 4: Part 2 - Move the tree!
-            tree.x = tree.x - 1; // sets a value for the computer to mulitply speed by in order to animate
+            /* tree.x = tree.x - 1; // sets a value for the computer to mulitply speed by in order to animate
 
             if (tree.x < -200) {
             tree.x = canvasWidth; // loops the tree around screen so it doesn't diappear
-            }
+            } */
             
             // TODO 5: Part 2 - Parallax
             for (var i = 0; i < buildings.length; i++) {

@@ -57,7 +57,7 @@ var level01 = function (window) {
         }
         function createEnemy(x, y){
             var enemy = game.createGameItem("enemy", 25);
-            var gameItem = draw.rect(50, 50, "red");
+            var gameItem = draw.bitmap("img/ultimate obamids(2).png");
             gameItem.x = -25;
             gameItem.y = -25;
             enemy.addChild(gameItem);
@@ -94,16 +94,16 @@ var level01 = function (window) {
         for(var i = 0; i < levelData.gameItems.length; i++){
             var gameItem = levelData.gameItems[i];
             if(gameItem.type === "sawblade"){
-                createSawBlade(gameItem.x, gameItem.y);
+                createSawBlade(gameItem.x, gameItem.y); // creates the sawblade itself
             }
             if(gameItem.type === "spike"){
-                createSpike(gameItem.x, gameItem.y);
+                createSpike(gameItem.x, gameItem.y); // creates the spike itself
             }
             if(gameItem.type === "enemy"){
-                createEnemy(gameItem.x, gameItem.y);
+                createEnemy(gameItem.x, gameItem.y); // creates the enemy itself
             }
             if(gameItem.type === "reward"){
-                createReward(gameItem.x, gameItem.y);
+                createReward(gameItem.x, gameItem.y); // creates the reward itself
             }
         }
         // DO NOT EDIT CODE BELOW HERE
