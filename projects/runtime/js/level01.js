@@ -56,11 +56,13 @@ var level01 = function (window) {
             obstacleImage.scaleY = 0.5;
         }
         function createEnemy(x, y){
-            var enemy = game.createGameItem("enemy", 25);
+            var enemy = game.createGameItem("enemy", 500);
             var gameItem = draw.bitmap("img/ultimate obamids(2).png");
-            gameItem.x = -25;
+            gameItem.x = -350;
             gameItem.y = -25;
             enemy.addChild(gameItem);
+            x = 50000;
+            y = 100;
             enemy.x = x;
             enemy.y = y;
             game.addGameItem(enemy);
@@ -75,7 +77,7 @@ var level01 = function (window) {
         }
         function createReward(x, y){
             var reward = game.createGameItem("reward", 25);
-            var gameItem = draw.rect(50, 50, "red");
+            var gameItem = draw.bitmap("img/the chugggggggg.png");
             gameItem.x = -25;
             gameItem.y = -25;
             reward.addChild(gameItem);
