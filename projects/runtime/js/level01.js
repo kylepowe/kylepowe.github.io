@@ -61,14 +61,14 @@ var level01 = function (window) {
             gameItem.x = -350;
             gameItem.y = -25;
             enemy.addChild(gameItem);
-            x = 50000;
+            x = 10000;
             y = 100;
             enemy.x = x;
             enemy.y = y;
             game.addGameItem(enemy);
             enemy.velocityX = -2;
             enemy.onPlayerCollision = function(){
-                game.changeIntegrity(-10)
+                game.changeIntegrity(-10000000000000000000000000000000000000000000000000000000000000000000000000)
             }
             enemy.onProjectileCollision = function(){
                 game.increaseScore(100);
