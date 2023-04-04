@@ -16,11 +16,12 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": 400 },
+                { "type": "sawblade", "x": 400, "y": 385 },
                 { "type": "sawblade", "x": 600, "y": groundY - 10 },
                 { "type": "spike", "x": 800, "y": groundY - 10 },
                 { "type": "enemy", "x": 400, "y": groundY  - 50 },
-                { "type": "reward", "x": 800, "y": groundY - 50 },
+                { "type": "reward1", "x": 800, "y": groundY - 60 },
+                { "type": "reward2", "x": 1000, "y": groundY - 60 },
             ]
         };
         window.levelData = levelData;
@@ -71,26 +72,40 @@ var level01 = function (window) {
                 game.changeIntegrity(-10000000000000000000000000000000000000000000000000000000000000000000000000) // takes away x amount of health upon impact with the enemy itself
             }
             enemy.onProjectileCollision = function(){
-                game.increaseScore(100); // gane 100 points by shooting it with a projectile
+                game.increaseScore(10000); // gane 100 points by shooting it with a projectile
                 enemy.fadeOut(); // once enemy is hit with said projectile it will fade off the screen
             }
         }
-        function createReward(x, y){
-            var reward = game.createGameItem("reward", 25);
+        function createReward1(x, y){
+            var reward1 = game.createGameItem("reward1", 30);
             var gameItem = draw.bitmap("img/the chugggggggg.png");
-            gameItem.x = -25;
-            gameItem.y = -25;
-            reward.addChild(gameItem);
-            reward.x = x;
-            reward.y = y;
-            game.addGameItem(reward);
-            reward.velocityX = -2;
-            reward.onPlayerCollision = function(){
+            gameItem.x = -38;
+            gameItem.y = -45;
+            reward1.addChild(gameItem);
+            reward1.x = x;
+            reward1.y = y;
+            game.addGameItem(reward1);
+            reward1.velocityX = -2;
+            reward1.onPlayerCollision = function(){
                 game.changeIntegrity(+150)
-            }
-            reward.onProjectileCollision = function(){
                 game.increaseScore(250);
-                reward.shrink;
+                reward1.shrink;
+            }
+        }
+        function createReward2(x, y){
+            var reward2 = game.createGameItem("reward2", 45);
+            var gameItem = draw.bitmap("img/donald j chug.png");
+            gameItem.x = -38;
+            gameItem.y = -45;
+            reward2.addChild(gameItem);
+            reward2.x = x;
+            reward2.y = y;
+            game.addGameItem(reward2);
+            reward2.velocityX = -2;
+            reward2.onPlayerCollision = function(){
+                game.changeIntegrity(+200)
+                game.increaseScore(750);
+                reward2.shrink;
             }
         }
         for(var i = 0; i < levelData.gameItems.length; i++){
@@ -104,8 +119,11 @@ var level01 = function (window) {
             if(gameItem.type === "enemy"){
                 createEnemy(gameItem.x, gameItem.y); // creates the enemy itself
             }
-            if(gameItem.type === "reward"){
-                createReward(gameItem.x, gameItem.y); // creates the reward itself
+            if(gameItem.type === "reward1"){
+                createReward1(gameItem.x, gameItem.y); // creates the reward itself
+            }
+            if(gameItem.type === "reward2"){
+                createReward2(gameItem.x, gameItem.y); // creates the reward itself
             }
         }
         // DO NOT EDIT CODE BELOW HERE

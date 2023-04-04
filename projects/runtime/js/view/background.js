@@ -46,12 +46,12 @@ var background = function (window) {
                 circle.y = groundY * Math.random(); // multiplies a random decimal times the groundY and stores it as the circles y position
                 background.addChild(circle); // adds circle as a child to background
             }
-            var moon = draw.bitmap("img/moon.png"); // draws the moon using bitmap and stores it in var moon
+            /* var moon = draw.bitmap("img/moon.png"); // draws the moon using bitmap and stores it in var moon
             moon.x = canvasWidth - 300; // adds an x value to the moon of 300 pixals
             moon.y = groundY - 450; // adds a y value to the moon of 200 pixals
             moon.scaleX = 0.5; // scales the moons x value
             moon.scaleY = 0.5; // scales the moons y value
-            background.addChild(moon); // adds the moon as a child of background
+            background.addChild(moon); // adds the moon as a child of background */
             
             var backgroundPlanet = draw.bitmap("img/background planet(1).png");
             backgroundPlanet.x = canvasWidth - 1900; 
@@ -59,6 +59,13 @@ var background = function (window) {
             backgroundPlanet.scaleX = 1.5;
             backgroundPlanet.scaleY = 1.5; 
             background.addChild(backgroundPlanet); 
+
+            var blackHole = draw.bitmap("img/blackhole.png");
+            blackHole.x = canvasWidth - 1000; 
+            blackHole.y = groundY - 450; 
+            blackHole.scaleX = 1;
+            blackHole.scaleY = 1; 
+            background.addChild(blackHole); 
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 5; ++i) {
