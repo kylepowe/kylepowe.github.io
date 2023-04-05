@@ -19,9 +19,12 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 400, "y": 385 },
                 { "type": "sawblade", "x": 600, "y": groundY - 10 },
                 { "type": "spike", "x": 800, "y": groundY - 10 },
-                { "type": "enemy", "x": 400, "y": groundY  - 50 },
+                { "type": "spike", "x": 800, "y": groundY - 10 },
+                { "type": "enemy", "x": 2500, "y": groundY - 200 },
+                { "type": "boss", "x": 15000, "y": groundY - 350 },
+                { "type": "reward", "x": 1200, "y": groundY - 30 },
                 { "type": "reward1", "x": 800, "y": groundY - 60 },
-                { "type": "reward2", "x": 1000, "y": groundY - 60 },
+                { "type": "reward2", "x": 2000, "y": groundY - 60 },
             ]
         };
         window.levelData = levelData;
@@ -57,23 +60,53 @@ var level01 = function (window) {
             obstacleImage.scaleY = 0.5; // gives the spike a scaling value of the y to the size of the image
         }
         function createEnemy(x, y){
-            var enemy = game.createGameItem("enemy", 500); // declares var enemy and assigns a hiitbox value to 500 pixels
-            var gameItem = draw.bitmap("img/ultimate obamids(2).png"); // draws the image used for the enemy
-            gameItem.x = -350; // gives the image an x value so that it fits inside of the hitbox
-            gameItem.y = -25; // gives the image a y value so that it fits inside of the hitbox
+            var enemy = game.createGameItem("enemy", 250); // declares var enemy and assigns a hiitbox value to 500 pixels
+            var gameItem = draw.bitmap("img/djt himself.png"); // draws the image used for the enemy
+            gameItem.x = -175; // gives the image an x value so that it fits inside of the hitbox
+            gameItem.y = -150; // gives the image a y value so that it fits inside of the hitbox
             enemy.addChild(gameItem); // adds enemy as a child to background
-            x = 10000; // gives the enemy an x value to be placed onto the screen
-            y = 100; // gives the enemy a y value to ba placed onto the screen
             enemy.x = x; // assigns a value to enemy.x which is now 10000
             enemy.y = y; // assigns a value to enemy.y which is now 100
             game.addGameItem(enemy); // draws the enemy itself onto the screen
             enemy.velocityX = -2; // sets a factor to be multiplied by so that the image can now be animated
             enemy.onPlayerCollision = function(){
-                game.changeIntegrity(-10000000000000000000000000000000000000000000000000000000000000000000000000) // takes away x amount of health upon impact with the enemy itself
+                game.changeIntegrity(-50) // takes away x amount of health upon impact with the enemy itself
             }
             enemy.onProjectileCollision = function(){
-                game.increaseScore(10000); // gane 100 points by shooting it with a projectile
+                game.increaseScore(100); // gane 100 points by shooting it with a projectile
                 enemy.fadeOut(); // once enemy is hit with said projectile it will fade off the screen
+            }
+        }
+        function createBoss(x, y){
+            var boss = game.createGameItem("boss", 500); // declares var enemy and assigns a hiitbox value to 500 pixels
+            var gameItem = draw.bitmap("img/ultimate obamids(2).png"); // draws the image used for the enemy
+            gameItem.x = -350; // gives the image an x value so that it fits inside of the hitbox
+            gameItem.y = -25; // gives the image a y value so that it fits inside of the hitbox
+            boss.addChild(gameItem); // adds enemy as a child to background
+            boss.x = x; // assigns a value to enemy.x which is now 10000
+            boss.y = y; // assigns a value to enemy.y which is now 100
+            game.addGameItem(boss); // draws the enemy itself onto the screen
+            boss.velocityX = -2; // sets a factor to be multiplied by so that the image can now be animated
+            boss.onPlayerCollision = function(){
+                game.changeIntegrity(-10000000000000000000000000000000000000000000000000000000000000000000000000) // takes away x amount of health upon impact with the enemy itself
+            }
+            boss.onProjectileCollision = function(){
+                game.increaseScore(10000); // gane 10000 points by shooting it with a projectile
+                boss.fadeOut(); // once enemy is hit with said projectile it will fade off the screen
+            }
+        }
+        function createReward(x, y){
+            var reward = game.createGameItem("reward", 30);
+            var gameItem = draw.bitmap("img/text.png");
+            gameItem.x = -38;
+            gameItem.y = -45;
+            reward.addChild(gameItem);
+            reward.x = x;
+            reward.y = y;
+            game.addGameItem(reward);
+            reward.velocityX = -2;
+            reward.onPlayerCollision = function(){
+                game.changeIntegrity(+100000)
             }
         }
         function createReward1(x, y){
@@ -118,6 +151,12 @@ var level01 = function (window) {
             }
             if(gameItem.type === "enemy"){
                 createEnemy(gameItem.x, gameItem.y); // creates the enemy itself
+            }
+            if(gameItem.type === "boss"){
+                createBoss(gameItem.x, gameItem.y); // creates the enemy itself
+            }
+            if(gameItem.type === "reward"){
+                createReward(gameItem.x, gameItem.y); // creates the enemy itself
             }
             if(gameItem.type === "reward1"){
                 createReward1(gameItem.x, gameItem.y); // creates the reward itself
