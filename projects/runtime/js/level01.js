@@ -16,15 +16,25 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": 385 },
+                { "type": "sawblade", "x": 400, "y": groundY - 100 },
                 { "type": "sawblade", "x": 600, "y": groundY - 10 },
+                { "type": "sawblade", "x": 600, "y": groundY - 10 },
+                { "type": "sawblade", "x": 600, "y": groundY - 10 },
+                { "type": "sawblade", "x": 600, "y": groundY - 10 },
+                { "type": "sawblade", "x": 1875, "y": groundY - 65 },
+                { "type": "sawblade", "x": 1875, "y": groundY - 65 },
+                { "type": "sawblade", "x": 1875, "y": groundY - 65 },
                 { "type": "spike", "x": 800, "y": groundY - 10 },
-                { "type": "spike", "x": 800, "y": groundY - 10 },
+                { "type": "spike", "x": 1050, "y": groundY - 10 },
+                { "type": "spike", "x": 2000, "y": groundY - 10 },
+                { "type": "spike", "x": 2000, "y": groundY - 10 },
+                { "type": "spike", "x": 2500, "y": groundY - 10 },
+                { "type": "spike", "x": 2500, "y": groundY - 10 },
                 { "type": "enemy", "x": 2500, "y": groundY - 200 },
                 { "type": "boss", "x": 15000, "y": groundY - 350 },
-                { "type": "reward", "x": 1200, "y": groundY - 30 },
+                { "type": "reward", "x": 8000, "y": groundY - 30 },
                 { "type": "reward1", "x": 800, "y": groundY - 60 },
-                { "type": "reward2", "x": 2000, "y": groundY - 60 },
+                { "type": "reward2", "x": 3000, "y": groundY - 60 },
             ]
         };
         window.levelData = levelData;
@@ -52,12 +62,12 @@ var level01 = function (window) {
             spikeHitZone.x = x; // assigns a value to sawBladeHitZon.x which is now 400 pixels
             spikeHitZone.y = y; // assigns a value to sawBladeHitZone which is now 100 pixels
             game.addGameItem(spikeHitZone); // creates the sawblade and exicutes the code putting it on screen
-            var obstacleImage = draw.bitmap("img/spike(2).png"); // adds in the image of the sawblade itself
+            var obstacleImage = draw.bitmap("img/new spike.png"); // adds in the image of the sawblade itself
             spikeHitZone.addChild(obstacleImage); // adds the sawblade as a child to the background
-            obstacleImage.x = -25; // gives the spike its x position
-            obstacleImage.y = -25; // gives the spike its y position
-            obstacleImage.scaleX = 0.5; // gives the spike a scaling value of the x to the size of the image
-            obstacleImage.scaleY = 0.5; // gives the spike a scaling value of the y to the size of the image
+            obstacleImage.x = -18; // gives the spike its x position
+            obstacleImage.y = -28; // gives the spike its y position
+            obstacleImage.scaleX = 0.8; // gives the spike a scaling value of the x to the size of the image
+            obstacleImage.scaleY = 0.8; // gives the spike a scaling value of the y to the size of the image
         }
         function createEnemy(x, y){
             var enemy = game.createGameItem("enemy", 250); // declares var enemy and assigns a hiitbox value to 500 pixels

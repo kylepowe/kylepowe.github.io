@@ -61,11 +61,19 @@ var background = function (window) {
             background.addChild(backgroundPlanet); 
 
             var blackHole = draw.bitmap("img/blackhole.png");
-            blackHole.x = canvasWidth - 1000; 
+            blackHole.x = canvasWidth - 850; 
             blackHole.y = groundY - 450; 
             blackHole.scaleX = 1;
             blackHole.scaleY = 1; 
             background.addChild(blackHole); 
+
+            var nebula = draw.bitmap("img/nebula.png");
+            nebula.x = canvasWidth - 1400; 
+            nebula.y = groundY - 400; 
+            nebula.scaleX = 0.25;
+            nebula.scaleY = 0.25; 
+            background.addChild(nebula); 
+
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 5; ++i) {
