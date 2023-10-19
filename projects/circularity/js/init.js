@@ -32,7 +32,7 @@ var init = function (window) {
                 circles.push(circle);           
         }
         // TODO 3 / 7 : Call the drawCircle() function 
-        for(var i = 0; i < 100; i++){
+        for(var i = 0; i < 500; i++){
 drawCircle();                       //looping the circles 
         }
 
@@ -46,7 +46,7 @@ drawCircle();                       //looping the circles
         and check to see if it has drifted off the screen.         
         */
         function update() {
-            for(var i = 0; i < 100; i++){
+            for(var i = 0; i < 500; i++){
                 // TODO 4 : Update the circle's position //
                 physikz.updatePosition(circles[i]);
                 
