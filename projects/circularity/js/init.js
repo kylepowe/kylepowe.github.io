@@ -27,12 +27,12 @@ var init = function (window) {
         //Code to draw a circle
         function drawCircle(){            
                 circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-                physikz.addRandomVelocity(circle, canvas, 10, 10);
+                physikz.addRandomVelocity(circle, canvas, 5, 5);
                 view.addChild(circle);                              // drawing the circles
                 circles.push(circle);           
         }
         // TODO 3 / 7 : Call the drawCircle() function 
-        for(var i = 0; i < 500; i++){
+        for(var i = 0; i < 150; i++){
 drawCircle();                       //looping the circles 
         }
 
@@ -46,7 +46,7 @@ drawCircle();                       //looping the circles
         and check to see if it has drifted off the screen.         
         */
         function update() {
-            for(var i = 0; i < 500; i++){
+            for(var i = 0; i < 150; i++){
                 // TODO 4 : Update the circle's position //
                 physikz.updatePosition(circles[i]);
                 
